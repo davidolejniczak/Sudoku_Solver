@@ -1,15 +1,14 @@
 CC = gcc 
-CFLAGS = -lncurses -I$(IDIR)
-
 IDIR = ./include/
-SRCDIR = ./src/ 
+CFLAGS = -lncurses -I$(IDIR)
+SRCDIR = ./src/
 
-SOURCES = $(SRCDIR)*.c 
+SOURCES = $(SRCDIR)*.c
 
 all: sudoku run clean 
 
-sudoku: 
-	$(CC) $(SOURCES) $(CFLAGS) -o $@
+sudoku:
+	$(CC) $(SOURCES) $(CFLAGS)-o $@
 
 run: 
 	./sudoku

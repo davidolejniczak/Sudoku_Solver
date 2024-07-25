@@ -4,12 +4,11 @@
 Square *** setUpPuzzle(int ** puzzle) {
     Square *** sudoku;
     int i, j; 
-    sudoku = (Square***)malloc(sizeof(Square**)*9)
-/*looping rows ,coln */
-    for (i = 0; i < 9; i++){
-        sudoku[i] = (Square**)malloc(sizeof(Square*)*9)
+    sudoku = (Square***)malloc(sizeof(Square**)*9);
+    for (i = 0; i < 9; i++) {
+        sudoku[i] = (Square**)malloc(sizeof(Square*)*9);
         for (j = 0; j < 9; j++) {
-             sudoku[i][j] = (Square*)malloc(sizeof(Square)*9)
+             sudoku[i][j] = (Square*)malloc(sizeof(Square)*9);
              sudoku[i][j]->number = puzzle[i][j]; 
              sudoku[i][j]->row = i;
              sudoku[i][j]->column = j;
@@ -17,9 +16,7 @@ Square *** setUpPuzzle(int ** puzzle) {
                 sudoku[i][j]->code = POSSIBLE; 
              } else {
                 sudoku[i][j]->code = 0x0; 
-             }
-             
-              
+             }              
         }
     } 
 }
